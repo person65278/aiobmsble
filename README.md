@@ -1,7 +1,7 @@
 [![GitHub Release][releases-shield]](https://pypi.org/p/aiobmsble/)
 [![Python Version][python-shield]](https://python.org/)
 [![License][license-shield]](LICENSE)
-
+Forked to add support for Enerkey BMS
 # Aiobmsble
 Requires Python 3 and uses [asyncio](https://docs.python.org/3/library/asyncio.html) and [Bleak](https://pypi.org/project/bleak/)
 
