@@ -29,6 +29,11 @@ class BMS(BaseBMS):
     _MIN_FRAME: Final[int] = 10  # header length
     _FIELDS: Final[tuple[tuple[BMSValue, int, str, Callable[[int], Any]], ...]] = (
         ("voltage", 201, "<f", lambda x: round(x, 3)),
+        ("current", 205, "<f", lambda x: round(x, 3)),
+        ("power", 213, "<f", lambda x: round(x, 3)),
+        ("stored_energy", 233, "<f", lambda x: round(x, 3)),      # Remaining Capacity in Ah
+        ("capacity", 229, "<f", lambda x: round(x, 3)),           # Total Design Capacity in Ah
+        ("battery_level", 237, "<f", lambda x: round(x, 1)),      # State of Charge (SOC) in %
         ("delta_voltage", 209, "<f", lambda x: round(x, 3)),
         ("problem_code", 216, "B", lambda x: x if x in {1, 3, 7, 8, 9, 10, 11} else 0),
         ("balancer", 216, "B", lambda x: (x == 0x5)),
